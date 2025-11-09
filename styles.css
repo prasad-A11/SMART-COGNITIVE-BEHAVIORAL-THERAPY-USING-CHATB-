@@ -1,0 +1,492 @@
+/* Preloader Styles */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(244, 147, 230);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 1s ease-out;
+}
+/* Preloader Logo */
+#preloader img {
+    width: 150px; /* Adjust logo size */
+    height: auto;
+    animation: fadeIn 2s ease-in-out;
+}
+/* Fade-in animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.5); }
+    to { opacity: 1; transform: scale(1); }
+}
+/* Hide preloader smoothly */
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease-out, visibility 1s ease-out;
+}
+
+/* Main Content */
+#mainContent {
+    display: none;
+}
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: space-between; /* Space between left and right items */
+    align-items: center;
+    background-color: white; /* Adjust background if needed */
+    padding: 15px 5%;
+}
+
+/* Navigation List */
+nav ul {
+    list-style: none; /* remove default bullets points or numbers */
+    display: flex;   /* adjust size and position */
+    padding: 0;   /* remove inner spacing inside elements */
+    margin: 0;   /* remove outer space around an element */
+}
+
+/* First four items (left-aligned) */
+nav ul.left {
+    gap: 20px; /* Adjust the spacing closer */
+}
+
+/* Other items (right-aligned) */
+nav ul.right {
+    gap: 40px; /* Normal spacing */
+}
+
+/* Navigation Links */
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 10px 15px;
+    transition: 0.3s;
+}
+
+/* Hover Effect */
+nav ul li a:hover {
+    color: #007BFF;
+    border-bottom: 2px solid #007BFF;
+}
+/* Slider Container */
+.slider {
+    position: relative;
+    width: 80%;
+    max-width: 100px;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 10px;
+}
+/* Individual Slides */
+.slide {
+    display: none;
+    width: 100%;
+}
+.slide img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+/* Fade Effect */
+.active {
+    display: block;
+    animation: fadeEffect 1.5s;
+}
+@keyframes fadeEffect {
+    from { opacity: 0.4; }
+    to { opacity: 1; }
+}
+
+/* Title and Slider */
+.slider-container {
+    width: 80%;
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: left;
+    position: relative;
+}
+
+/* Title Styling */
+.slider-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: black;
+}
+/* backgound color for home, cbt toolkit etc...*/
+.nav-item {
+    padding: 10px 15px;
+    background-color: #f0f0f0; /* Light gray background */
+    border-radius: 5px; /* Smooth rounded corners */
+    transition: background-color 0.3s ease;
+}
+
+.nav-item:hover {
+    background-color: #d0d0d0; /* Darker gray on hover */
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: black; /* Text color */
+    font-weight: bold;
+}
+ */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Ensures space between links & buttons */
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f8f8f8; /* Adjust as needed */
+}
+
+.nav-links {
+    display: flex;
+    gap: 15px; /* Space between nav items */
+}
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+}
+.auth-buttons button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#loginBtn {
+    background: white;
+    color: black;
+    border: 1px solid black;
+}
+
+#logoutBtn {
+    background: #A0633C;
+    color: white;
+}
+.nav-item {
+    padding: 10px 15px;
+    background-color: #f0f0f0; /* Light gray background */
+    border-radius: 5px; /* Smooth rounded corners */
+    transition: background-color 0.3s ease;
+}
+
+.nav-item:hover {
+    background-color: #d0d0d0; /* Darker gray on hover */
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: black; /* Text color */
+    font-weight: bold;
+}
+
+/* Add a straight-line background below specific navigation items */
+.about, .offer, .toolkit, .training, .contact {
+    position: relative;
+}
+
+.about::after, .offer::after, .toolkit::after, .training::after, .contact::after {
+    content: "";
+    position: absolute;
+    bottom: -5px; /* Adjust the position of the line */
+    left: 0;
+    width: 100%;
+    height: 10px; /* Thickness of the line */
+    background-color: #b59b73; /* Beige-gold color matching the reference */
+}
+
+/* add images for scroll automatically */
+/* Slider Container */
+.slider {
+    position: relative;
+    width: 80%;
+    max-width: 800px;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 10px; /* Rounded corners */
+}
+
+/* Individual Slides */
+.slide {
+    display: none;
+    width: 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: 300px; /* Set a fixed height */
+    object-fit: cover; /* Maintain aspect ratio */
+}
+
+/* Animation */
+.active {
+    display: block;
+    animation: fadeEffect 1.5s;
+}
+
+@keyframes fadeEffect {
+    from { opacity: 0.4; }
+    to { opacity: 1; }
+}
+
+/* Container for Title and Slider */
+.slider-container {
+     width: 100vw;  /* Full viewport width */
+    overflow: hidden;
+    position: relative;
+}
+/* title welcome title */
+/* Title Styling */
+.slider-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px; /* Space between title and slider */
+    color: black;
+}
+.slider-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 800px; /* Adjust to your design */
+    margin: auto;
+}
+
+/* Slider Styles */ /* Ensure the slider does not overflow */
+.slider {
+    display: flex;
+    width: 100%; /* Adjust based on number of images */
+    overflow: hidden;
+    transition: transform 0.5s ease-in-out;
+    will-change: transform;
+}
+
+/* Slide Image */
+.slide img {
+    width: 100%;
+    height: auto; 
+    object-fit: cover;
+}
+
+/* Apply a soft background color */
+body {
+    background-color: #e0e8f2;  /* Light grayish background */
+    font-family: 'Poppins', sans-serif; /* Modern font */
+}
+
+/* Navigation Bar Styling */
+nav {
+    text-align: center;
+    padding: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    background-color: white;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+    color: black;
+    transition: 0.3s ease-in-out;
+}
+
+/* Hover effect for buttons */
+nav a:hover {
+    background-color: #f6cde3; /* Brown shade */
+    color: rgb(232, 157, 157);
+    transform: scale(1.05);
+}
+
+/* Center the content */
+.container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* Styling for heading */
+h1 {
+    font-size: 28px;
+    color: #333;
+}
+
+/* Styling for the image */
+img {
+    width: 70%; /* Adjust image size */
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+iframe, video {
+    display: block;
+    margin: auto;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-size: 40px !important;  /* Force larger size */
+    font-weight: bold;
+    color: #3529bd;
+    text-align: center;
+}
+
+.overview-container {
+    display: flex;
+    align-items: center; /* Align text and image vertically */
+    justify-content: space-between; /* Space out text and image */
+    width: 85%;
+    margin: auto;
+}
+
+.overview-text {
+    width: 55%; /* Adjust text width */
+    text-align: left;
+    margin-left: -40px; /* Move further left */
+}
+/* Move image to the right */
+.overview-image {
+    width: 20%;
+    margin-right: 120px; /* Push image slightly to the right */
+    margin-top: 250px; /* Push image slightly downward */
+}
+
+.overview-image img {
+    width: 170%; /* Adjust image size */
+    margin-right: 100px; /* Moves the image slightly to the right */
+    height: auto;
+    border-radius: 10px; /* Optional: rounded corners */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/*WHY TO TAKE THERAPY? */
+.therapy-section {
+    display: flex; 
+    align-items: center; /* Align items vertically */
+    justify-content: space-between; /* Space between text and image */
+    gap: 20px; /* Adjust spacing between image and text */
+}
+
+.therapy-image {
+    width: 55%; /* Adjust image width */
+    margin-top: 150px;
+}
+
+.therapy-text {
+    width: 100%; /* Adjust text width */
+    text-align: justify;
+}
+/* Prevent shaking due to overflow */
+body, html {
+    overflow-x: hidden;  /* Prevents horizontal scrolling */
+    scroll-behavior: smooth;  /* Smooth scrolling */
+}
+
+.counseling-container {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+    background: #f5f7fa;
+    border-radius: 15px;
+}
+
+.counseling-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #4A7C59;
+    margin-bottom: 10px;
+}
+
+.counseling-subtitle {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.session-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.session-box {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.session-box:hover {
+    transform: translateY(-5px);
+}
+
+.session-img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.read-more {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #A0633C;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+}
+
+.read-more:hover {
+    background-color: #824d2d;
+}
+ 
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+

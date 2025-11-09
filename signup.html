@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CBT Therapy Sign Up</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Centering the Signup Form */
+        .signup-container {
+            width: 100%;
+            max-width: 400px;
+            margin: 100px auto;
+            padding: 20px;
+            background: #f8f8f8;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1;
+        }
+
+        .signup-container h2 {
+            font-size: 28px;
+            color: #4A3F35;
+            margin-bottom: 20px;
+        }
+
+        .signup-container input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        .signup-container button {
+            width: 100%;
+            padding: 10px;
+            background: #A0633C;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+
+        .or-divider {
+            margin: 15px 0;
+            font-weight: bold;
+            font-size: 16px;
+            color: #777;
+        }
+
+        .social-signup {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .social-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .google-btn {
+            background: #db4437;
+            color: white;
+        }
+
+        .facebook-btn {
+            background: #1877f2;
+            color: white;
+        }
+
+        .social-button img {
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+        }
+
+        /* GIF Styling */
+        .gif-container {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 300px;
+        }
+
+        .gif-left {
+            left: 5%;
+        }
+
+        .gif-right {
+            right: 5%;
+        }
+
+        @media (max-width: 768px) {
+            .gif-container {
+                display: none; /* Hide GIFs on small screens */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Left GIF -->
+    <img src="assets\left-image.png" class="gif-container gif-left" alt="Left Animation">
+
+    <div class="signup-container">
+        <h2>CBT Therapy Sign Up</h2>
+        <form id="signup-form">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="submit">Sign Up</button>
+        </form>
+
+        <div class="or-divider">OR</div>
+
+        <div class="social-signup">
+            <button class="social-button google-btn">
+                <img src="assets\google-icon.png" alt="Google"> Sign Up with Google
+            </button>
+            <button class="social-button facebook-btn">
+                <img src="assets\facebook-icon.png" alt="Facebook"> Sign Up with Facebook
+            </button>
+        </div>
+    </div>
+
+    <!-- Right GIF -->
+    <img src="assets\right-image.png" class="gif-container gif-right" alt="Right Animation">
+
+    <script>
+        document.getElementById("signup-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            
+            const username = document.getElementById("username").value;
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+        
+            fetch("http://127.0.0.1:5000/signup", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ username, email, password })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.message) {
+                    alert(data.message);
+                    window.location.href = "login.html";
+                } else {
+                    alert(data.error);
+                }
+            })
+            .catch(error => console.error("Error:", error));
+        });
+    </script>
+
+</body>
+</html>

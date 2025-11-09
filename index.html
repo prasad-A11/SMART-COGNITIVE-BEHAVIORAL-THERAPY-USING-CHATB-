@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Existing styles for layout... */
+        
+        .login-container {
+            width: 100%;
+            max-width: 400px;
+            margin: 100px auto;
+            padding: 20px;
+            background: #f8f8f8;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-container h2 {
+            font-size: 28px;
+            color: #f95fc6;
+            margin-bottom: 20px;
+        }
+
+        .login-container input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #a02d2d;
+        }
+
+        .login-container button {
+            width: 100%;
+            padding: 10px;
+            background: #A0633C;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .forgot-password {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Preloader with Logo -->
+    <div id="preloader">
+        <img src="assets/logo.png" alt="CBT Logo">
+    </div>
+
+    <!-- Audio Element -->
+    <audio id="introAudio" src="assets\intro.mp3"></audio>
+
+    <!-- Main Content (Hidden Initially) -->
+    <div id="mainContent" style="display: none;">
+        <!-- Navigation Bar -->
+        <nav>
+            <ul class="left">
+                <li class="nav-item about"><a href="about.html">About</a></li>
+                <li class="nav-item offer"><a href="offer.html">What We Offer</a></li>
+                <li class="nav-item toolkit"><a href="toolkit.html">CBT Toolkit</a></li>
+                <li class="nav-item training"><a href="training.html">CBT Training</a></li>
+            </ul>
+            <ul class="right">
+                <li class="nav-item contact"><a href="contact.html">Contact</a></li>
+                <!-- Login / Logout Button -->
+                <li id="auth">    <! --  authentication --!> 
+                    <a href="login.html" id="login-btn">Login</a>
+                    <a href="#" id="logout-btn" style="display:none;">Logout</a>
+                </li>
+            </ul>
+            <button id="logoutBtn" style="float: right; background: #A0633C; color: white; padding: 8px 15px; border: none; border-radius: 5px; cursor: pointer;">
+                Logout
+            </button>
+        </nav>
+
+        <!-- Title and Slider Container -->
+        <div class="slider-container">
+            <h1 class="slider-title">Welcome to the CBT Therapy</h1>
+
+            <!-- Image Slider -->
+            <div class="slider">
+                <div class="slide">
+                    <img src="assets\images.jpg" alt="CBT Image 1">
+                </div>
+                <div class="slide">
+                    <img src="assets\images1.jpg" alt="CBT Image 2">
+                </div>
+                <div class="slide">
+                    <img src="assets\images2.jpg" alt="CBT Image 3">
+                </div>
+                <div class="slide">
+                    <img src="assets\images3.jpg" alt="CBT Image 3">
+                </div>
+                <div class="slide">
+                    <img src="assets\images4.jpg" alt="CBT Image 3">
+                </div>
+            </div>
+        </div>
+
+        <!-- New Signup Form Section -->
+        <div class="login-container">
+            <h2>Sign Up for CBT Therapy</h2>
+            <form id="signupForm">
+                <input type="text" id="username" placeholder="Username" required>
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button type="button" id="signup-btn">Sign Up</button>
+            </form>
+        </div>
+
+        <!-- Continue with other content sections -->
+        <div class="overview-container">
+            <div class="overview-text">
+                <h2>🌿OVERVIEW🌿</h2>
+                <p>
+                    Cognitive Behavioral Therapy (CBT) is a structured, goal-oriented form of psychotherapy that helps individuals identify and change negative thought patterns and behaviors. 
+                    It is commonly used to treat anxiety, depression, stress, and other mental health conditions.
+                </p>
+            </div>
+            <div class="overview-image">
+                <img src="assets/images5.jpg" alt="CBT Therapy Image">
+            </div>
+        </div>
+
+        <ul>
+            <li>Focuses on thoughts, emotions, and behaviors.</li>
+            <li>Short-term and highly effective.</li>
+            <li>Helps develop coping strategies.</li>
+            <li>Scientifically proven for mental health issues.</li>
+        </ul>
+
+        <div class="therapy-section">
+            <img src="assets\images6.jpg" alt="CBT Therapy" class="therapy-image">
+            <div class="therapy-text">
+                <h2>🌿WHY TO TAKE THERAPY?🌿</h2>
+                <ul>
+                    <li><strong>Stress & Anxiety:</strong> If daily stress or anxiety is overwhelming, therapy helps manage emotions.</li>
+                    <li><strong>Depression:</strong> CBT helps break negative thought cycles that cause depression.</li>
+                    <li><strong>Trauma Recovery:</strong> Helps in healing from past traumatic experiences.</li>
+                    <li><strong>Low Self-Esteem:</strong> Builds confidence and self-awareness.</li>
+                    <li><strong>Better Decision-Making:</strong> Improves problem-solving and decision-making skills.</li>
+                </ul>
+            </div>
+        </div>
+
+        <p><strong>Suggestions:</strong></p>
+        <ul>
+            <li>Start with small steps—talking to a professional can make a big difference.</li>
+            <li>Practice mindfulness and self-care regularly.</li>
+            <li>Journaling your thoughts can help identify patterns.</li>
+        </ul>
+        <div class="content-section">
+            <video width="50%" controls>
+                <source src="assets\cbt-video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="counseling-container">
+            <h2 class="counseling-title">🌿 Counseling Sessions: Your Journey to a Better Self 🌟</h2>
+            <p class="counseling-subtitle">Discover a structured path to emotional well-being with guided sessions designed to support your mental health.</p>
+            
+            <div class="session-list">
+                <!-- Session 1 -->
+                <div class="session-box">
+                    <img src="assets\session1.gif" alt="Session 1" class="session-img">
+                    <h3>Session 1: Understanding Your Thoughts</h3>
+                    <p>Explore how your thoughts influence emotions and behaviors, and learn to shift negative thinking patterns.</p>
+                    <a href="session1.html" class="read-more">READ MORE</a>
+                </div>
+        
+                <!-- Session 2 -->
+                <div class="session-box">
+                    <img src="session2.gif" alt="Session 2" class="session-img">
+                    <h3>Session 2: Managing Stress & Anxiety</h3>
+                    <p>Discover techniques to reduce stress, practice mindfulness, and improve relaxation in daily life.</p>
+                    <a href="session2.html" class="read-more">READ MORE</a>
+                </div>
+        
+                <!-- Session 3 -->
+                <div class="session-box">
+                    <img src="session3.gif" alt="Session 3" class="session-img">
+                    <h3>Session 3: Building Emotional Resilience</h3>
+                    <p>Learn how to cope with challenges, build self-confidence, and maintain emotional stability.</p>
+                    <a href="session3.html" class="read-more">READ MORE</a>
+                </div>
+        
+                <!-- Session 4 -->
+                <div class="session-box">
+                    <img src="session4.gif" alt="Session 4" class="session-img">
+                    <h3>Session 4: Effective Communication</h3>
+                    <p>Enhance your relationships by improving communication, setting boundaries, and expressing yourself effectively.</p>
+                    <a href="session4.html" class="read-more">READ MORE</a>
+                </div>
+        
+                <!-- Session 5 -->
+                <div class="session-box">
+                    <img src="session5.gif" alt="Session 5" class="session-img">
+                    <h3>Session 5: Self-Care & Positive Habits</h3>
+                    <p>Develop self-care routines and habits that contribute to long-term mental and emotional well-being.</p>
+                    <a href="session5.html" class="read-more">READ MORE</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
